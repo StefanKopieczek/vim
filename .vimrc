@@ -2,6 +2,9 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" Map ; to : to save the poor shift key.
+nmap ; :
+
 " Tweaks for coding.
 syntax on
 set smartindent
