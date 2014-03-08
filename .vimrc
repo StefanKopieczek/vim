@@ -9,7 +9,14 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Strip trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Fugitive status line
 set laststatus=2
 set statusline=%{fugitive#statusline()}
 hi StatusLine ctermfg=black ctermbg=green
+
+" Syntastic config
+let g:syntastic_check_on_open = 1
+let g:syntastic_python_checkers = ['flake8']
