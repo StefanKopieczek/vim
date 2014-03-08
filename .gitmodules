@@ -7,3 +7,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git@github.com:msanders/snipmate.vim.git
