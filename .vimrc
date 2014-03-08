@@ -2,6 +2,10 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" Color scheme
+color molokai
+:set t_Co=256
+
 " Map ; to : to save the poor shift key.
 nmap ; :
 
