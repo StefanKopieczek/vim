@@ -21,12 +21,12 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Show line numbers, with a black background.
 set number
-highlight LineNr ctermfg=white ctermbg=234
+highlight LineNr ctermfg=white ctermbg=bg guifg=white guibg=bg
 
 " Fugitive status line
 set laststatus=2
 set statusline=%{fugitive#statusline()}
-hi StatusLine ctermfg=black ctermbg=green
+hi StatusLine ctermfg=black ctermbg=green guifg=black guibg=green
 
 " Syntastic config
 let g:syntastic_check_on_open = 1
