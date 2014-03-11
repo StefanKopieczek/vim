@@ -17,7 +17,16 @@ set shiftwidth=4
 set expandtab
 
 " Strip trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+fun! StripTrailingWhitespace()
+    " Only strip if the b:noStripeWhitespace variable isn't set
+    if exists('b:noStripWhitespace')
+        return
+    endif
+    %s/\s\+$//e
+    endfun
+
+autocmd BufWritePre * call StripTrailingWhitespace()
+autocmd FileType markdown let b:noStripWhitespace=1
 
 " Show line numbers, with a black background.
 set number
@@ -25,8 +34,10 @@ highlight LineNr ctermfg=white ctermbg=bg guifg=white guibg=bg
 
 " Fugitive status line
 set laststatus=2
-set statusline=%{fugitive#statusline()}
-hi StatusLine ctermfg=black ctermbg=green guifg=black guibg=green
+set statusline=%1*%{fugitive#statusline()}%*%=%2*%-20.(Column\ %c%)%*
+hi StatusLine ctermfg=bg guifg=bg
+hi User1 ctermfg=green guifg=green
+hi User2 ctermfg=white guifg=green
 
 " Syntastic config
 let g:syntastic_check_on_open = 1
