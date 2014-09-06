@@ -16,6 +16,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+syntax enable
+filetype plugin on
+set number
+
 " Strip trailing whitespace
 fun! StripTrailingWhitespace()
     " Only strip if the b:noStripeWhitespace variable isn't set
