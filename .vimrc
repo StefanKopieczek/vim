@@ -61,6 +61,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Syntastic config
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_python_flake8_args ='--ignore="E501,E221,E241,E251"'
 
 " Ctrl-p key remap
 let g:ctrlp_map = '<c-p>'
