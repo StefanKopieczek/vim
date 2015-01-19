@@ -9,6 +9,10 @@ color molokai
 " Map ; to : to save the poor shift key.
 nmap ; :
 
+filetype on
+filetype plugin on
+filetype indent on
+
 " Tweaks for coding.
 syntax on
 set smartindent
@@ -19,6 +23,9 @@ set expandtab
 " Apparently necessary to make go-vim work.
 syntax enable
 filetype plugin on
+
+" Don't expand tabs for makefiles.
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 " Strip trailing whitespace
 fun! StripTrailingWhitespace()
@@ -31,6 +38,7 @@ fun! StripTrailingWhitespace()
 
 autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd FileType markdown let b:noStripWhitespace=1
+autocmd FileType asm set ft=nasm
 
 " Show line numbers, with a black background.
 set number
