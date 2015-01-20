@@ -61,7 +61,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Syntastic config
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checkers = ['flake8']
-"let g:syntastic_python_flake8_args ='--ignore="E501,E221,E241,E251"'
+let g:syntastic_python_flake8_args ='--ignore="E501,E221,E241,E251"'
+set <F12>=<C-v><F12>
+map <F12> :SyntasticToggleMode<CR>
 
 " Ctrl-p key remap
 let g:ctrlp_map = '<c-p>'
@@ -74,4 +76,3 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 " END buffer stuff ----"
-
