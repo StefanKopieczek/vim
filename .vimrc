@@ -1,4 +1,5 @@
 " Set up the Pathogen bundle manager.
+let g:pathogen_disabled = ['vim-go']
 call pathogen#infect()
 call pathogen#helptags()
 
