@@ -68,6 +68,7 @@ map <F12> :SyntasticToggleMode<CR>
 
 " Ctrl-p key remap
 let g:ctrlp_map = '<c-p>'
+nnoremap <leader>. :CtrlPTag<cr>
 
 " ---- Buffer stuff:
 set hidden
