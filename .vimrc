@@ -42,7 +42,7 @@ autocmd FileType markdown let b:noStripWhitespace=1
 autocmd FileType asm set ft=nasm
 
 " Show line numbers, with a black background.
-set number
+set relativenumber
 highlight LineNr ctermfg=white ctermbg=bg guifg=white guibg=bg
 
 " Fugitive status line
