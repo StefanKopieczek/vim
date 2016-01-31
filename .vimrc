@@ -3,6 +3,14 @@ let g:pathogen_disabled = ['vim-go']
 call pathogen#infect()
 call pathogen#helptags()
 
+" Set minimal=1 in ~/.vimlocal to reduce CPU hit on low-spec systems.
+let minimal = 0
+
+" Source ~/.vimrclocal to allow per-system overrides.
+if filereadable(expand("~/.vimlocal"))
+    source ~/.vimlocal
+endif
+
 " Color scheme
 color molokai
 :set t_Co=256
@@ -42,7 +50,9 @@ autocmd FileType markdown let b:noStripWhitespace=1
 autocmd FileType asm set ft=nasm
 
 " Show line numbers, with a black background.
-set relativenumber
+if minimal != 1
+    set relativenumber
+endif
 highlight LineNr ctermfg=white ctermbg=bg guifg=white guibg=bg
 
 " Fugitive status line
@@ -78,3 +88,8 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 " END buffer stuff ----"
+
+" Re-source ~/.vimlocal so it takes precedence over other config.
+if filereadable(expand("~/.vimlocal"))
+    source ~/.vimlocal
+endif
