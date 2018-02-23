@@ -6,6 +6,9 @@ call pathogen#helptags()
 " Set minimal=1 in ~/.vimlocal to reduce CPU hit on low-spec systems.
 let minimal = 0
 
+" I've got fed up with autocomment lately; turning it off for now.
+let g:autocomment_disabled = 1
+
 " Source ~/.vimrclocal to allow per-system overrides.
 if filereadable(expand("~/.vimlocal"))
     source ~/.vimlocal
